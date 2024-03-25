@@ -49,3 +49,4 @@ console.log(pridet); //-> 6 2/6
 
 const realusSk = `${sveikojiD + (skaitiklis / daliklis)}`;
 console.log(realusSk); //-> 3.3333333333333335
+//nnn
