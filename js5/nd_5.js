@@ -43,10 +43,13 @@ console.log(trup); //-> 3 1/3
 const sveikojiD1 = 3;
 const skaitiklis1 = 1;
 const daliklis1 = 3;
+const sveikasisSkaicius = 30;
+
 
 const pridet = `${sveikojiD + sveikojiD1} ${skaitiklis + skaitiklis1}/${daliklis + daliklis1}`
 console.log(pridet); //-> 6 2/6 
 
 const realusSk = `${sveikojiD + (skaitiklis / daliklis)}`;
-console.log(realusSk); //-> 3.3333333333333335
-//nnn
+console.log(Math.round(realusSk)); //-> 3
+
+console.log(`${sveikojiD + sveikasisSkaicius} ${skaitiklis}/${daliklis}`);//->33 1/3
