@@ -1,6 +1,7 @@
 const start = document.getElementById("start");
 const stop = document.getElementById("stop");
 const timer = document.getElementById("timer");
+const startAg = document.getElementById("start_again");
 
 let i = 0;
 let timerId;
@@ -34,3 +35,4 @@ let stopTimer = () => {
 
 start.onclick = startTimer;
 stop.onclick = stopTimer;
+starAg.onclick = start_again;
