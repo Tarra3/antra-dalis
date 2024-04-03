@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #timer {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #controls {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="timer">00:00:00</div>
+    <div id="controls">
+        <button onclick="startStop()">Start/Stop</button>
+        <button onclick="reset()">Reset</button>
+        <button onclick="startAgain()">Start Again</button>
+        <button onclick="fixTime()">Fix Time</button>
+    </div>
+    <script>
+        let startTime;
+        let running = false;
+        let interval;
+
+        function startStop() {
+            if (running) {
+                stopTimer();
+            } else {
+                startTimer();
+            }
+        }
+
+        function startTimer() {
+            running = true;
+            startTime = Date.now() - (getTimeElapsed() || 0);
+            interval = setInterval(updateTimer, 100);
+        }
+
+        function stopTimer() {
+            running = false;
+            clearInterval(interval);
+        }
+
+        function reset() {
+            stopTimer();
+            document.getElementById("timer").textContent = "00:00:00";
+        }
+
+        function startAgain() {
+            reset();
+            startTimer();
+        }
+
+        function fixTime() {
+            const elapsedTime = getTimeElapsed();
+            const formattedTime = formatTime(elapsedTime);
+            document.getElementById("fixedTime").textContent = `Fixed Time: ${formattedTime}`;
+        }
+
+        function updateTimer() {
+            const elapsedTime = getTimeElapsed();
+            const formattedTime = formatTime(elapsedTime);
+            document.getElementById("timer").textContent = formattedTime;
+        }
+
+        function getTimeElapsed() {
+            return running ? Date.now() - startTime : 0;
+        }
+
+        function formatTime(milliseconds) {
+            const totalSeconds = Math.floor(milliseconds / 1000);
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+            const hours = Math.floor(minutes / 60);
+            const formattedHours = String(hours).padStart(2, "0");
+            const formattedMinutes = String(minutes % 60).padStart(2, "0");
+            const formattedSeconds = String(seconds).padStart(2, "0");
+            return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+        }
+    </script>
+</body>
+
+</html>
