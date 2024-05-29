@@ -1,3 +1,4 @@
+
 const fs = require("fs");
 
 let data = fs.readFileSync(process.argv[2]).toString().split("\r\n"); //.map(Number);

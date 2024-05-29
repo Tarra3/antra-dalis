@@ -1,3 +1,4 @@
+
 let hour = Number(process.argv[3]);
 let min = Number(process.argv[4]);
 let sec = Number(process.argv[5]);
@@ -16,3 +17,9 @@ if (sec === 60) {
 
 
 console.log(`It is: ${hour}h:${min}min:${sec}s`);
+
+
+
+//
+let x = 9;
+console.log(x.toString().padStart(2, '0')); //logina 09

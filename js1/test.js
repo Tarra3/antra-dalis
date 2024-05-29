@@ -12,6 +12,9 @@ $_$KIntamasis$_$
 *kabliataskis, minusas, tarpas,
 */
 
+// let x=5; 
+// let y=10; (arba y="10" logins 510 nes stringas ->"10")
+// let suma = x+y;
 // log(x+y+" - suma") ->  15 - suma  (jei x=5,y-10)
 // log("suma: " +x+y) -> 510 (nes tampa stringu del '+' zenklo pries x)
 // log("suma: " +(x+y).toFixed(2)) -> 15 .toFixed(2) palieka po kablelio du sk.

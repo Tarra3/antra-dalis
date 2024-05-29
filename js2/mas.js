@@ -39,3 +39,42 @@ men.forEach( (sav)=>{
 
 console.log(` ${suma / kiekis}`);
 */
+
+//
+let mas = [5, 3, 6];
+mas.push(5);
+mas[6] = 8 //(mas- sestas elementas lygus 8) logina [5,3,6,5,<2empty items>,8] 
+console.log(mas);
+
+//
+let mas = [5, 3, 6];
+let c = mas;
+//c = [5, 3, 6]
+//mas = [5, 3, 6]
+
+//
+let mas = [];
+for (let i = 1; i < 10; i++) {
+    mas.push(i);
+}
+console.log(mas); //logina 123..9 skaicius, ne supusinti i masyva. 
+
+
+mas.forEach((x) => {
+    console.log(x);
+})
+
+//forEach f-ja:
+mas.forEach()
+
+function name(x) {
+    console.log(x);
+}
+
+//rodykles f-ja:
+let suma = (y, x) => {
+    console.log(x + y);
+}
+suma(5, 6);
+
+//
